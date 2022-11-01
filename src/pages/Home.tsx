@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentRow1, ContentRow2 } from '../components/ContentRow';
+import ContentRow from '../components/ContentRow';
 import Footer from '../components/Footer';
 import InfoBox from '../components/InfoBox';
 import InfoItem from '../components/InfoItem';
@@ -13,19 +13,20 @@ const Home: React.FC = () => {
         <InfoItem imgUrl="./assets/bricks.svg" alt="sheets" title="Criado com componentes" subtitle="Utilizamos o Styled Components." />
         <InfoItem imgUrl="./assets/calendar-check.svg" alt="selecionado" title="Fácil aproveitamento" subtitle="Estamos no caminho" />
       </div>
-      <ContentRow1
+      <ContentRow
         imgUrl="./assets/bg1.jpg"
         alt="image1"
         title="Lorem Ipsum"
         text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto recusandae molestias quod maiores odio numquam corrupti veritatis deserunt autem, tenetur ullam facere amet nam cum dolor? Quis, rerum repellendus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto recusandae molestias quod maiores odio numquam corrupti veritatis deserunt autem, tenetur ullam facere amet nam cum dolor? Quis, rerum repellendus."
       />
-      <ContentRow2
+      <ContentRow
+        invert={true}
         imgUrl="./assets/bg2.jpg"
         alt="image2"
         title="Lorem Ipsum"
         text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto recusandae molestias quod maiores odio numquam corrupti veritatis deserunt autem, tenetur ullam facere amet nam cum dolor? Quis, rerum repellendus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto recusandae molestias quod maiores odio numquam corrupti veritatis deserunt autem, tenetur ullam facere amet nam cum dolor? Quis, rerum repellendus."'
       />
-      <ContentRow1
+      <ContentRow
         imgUrl="./assets/bg3.jpg"
         alt="image1"
         title="Lorem Ipsum"

@@ -19,6 +19,7 @@ const InfoItemStyled = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 20vh;
+  text-align: center;
 `;
 
 const ImgStyled = styled.img`

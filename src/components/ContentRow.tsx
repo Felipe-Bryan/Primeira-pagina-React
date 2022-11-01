@@ -6,6 +6,7 @@ interface ContentRowProps {
   alt: string;
   title: string;
   text: string;
+  invert?: boolean;
 }
 
 const ContentRowStyled = styled.div`
@@ -25,32 +26,32 @@ const ImgStyled = styled.img`
   width: 100%;
 `;
 
-const ContentRow1: React.FC<ContentRowProps> = ({ imgUrl, alt, title, text }) => {
-  return (
-    <ContentRowStyled>
-      <ContentBoxStyled>
-        <h4 style={{ padding: '5px' }}>{title}</h4>
-        <p style={{ padding: '5px' }}>{text}</p>
-      </ContentBoxStyled>
-      <ContentBoxStyled>
-        <ImgStyled src={imgUrl} alt={alt} />
-      </ContentBoxStyled>
-    </ContentRowStyled>
-  );
+const ContentRow: React.FC<ContentRowProps> = ({ imgUrl, alt, title, text, invert }) => {
+  if (!invert) {
+    return (
+      <ContentRowStyled>
+        <ContentBoxStyled>
+          <h4 style={{ padding: '5px' }}>{title}</h4>
+          <p style={{ padding: '5px' }}>{text}</p>
+        </ContentBoxStyled>
+        <ContentBoxStyled>
+          <ImgStyled src={imgUrl} alt={alt} />
+        </ContentBoxStyled>
+      </ContentRowStyled>
+    );
+  } else {
+    return (
+      <ContentRowStyled>
+        <ContentBoxStyled>
+          <ImgStyled src={imgUrl} alt={alt} />
+        </ContentBoxStyled>
+        <ContentBoxStyled>
+          <h4 style={{ padding: '5px' }}>{title}</h4>
+          <p style={{ padding: '5px' }}>{text}</p>
+        </ContentBoxStyled>
+      </ContentRowStyled>
+    );
+  }
 };
 
-const ContentRow2: React.FC<ContentRowProps> = ({ imgUrl, alt, title, text }) => {
-  return (
-    <ContentRowStyled>
-      <ContentBoxStyled>
-        <ImgStyled src={imgUrl} alt={alt} />
-      </ContentBoxStyled>
-      <ContentBoxStyled>
-        <h4 style={{ padding: '5px' }}>{title}</h4>
-        <p style={{ padding: '5px' }}>{text}</p>
-      </ContentBoxStyled>
-    </ContentRowStyled>
-  );
-};
-
-export { ContentRow1, ContentRow2 };
+export default ContentRow;
